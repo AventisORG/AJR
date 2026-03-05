@@ -189,6 +189,10 @@ ul {
   box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
 }
 
+.nav-close {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -213,7 +217,6 @@ ul {
   position: relative;
   min-height: 70vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   background: url('../images/truck-trailer-sun.jpg?v=20260217') center/cover no-repeat;
   text-align: center;
@@ -234,6 +237,11 @@ ul {
   position: relative;
   z-index: 1;
   padding: 100px 20px 50px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-logo {
@@ -244,9 +252,13 @@ ul {
 
 .hero-tagline {
   max-width: 320px;
-  margin: -4px auto 24px;
+  margin: -4px auto 0;
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
   opacity: 0.9;
+}
+
+.hero-buttons-container {
+  margin-top: 60px;
 }
 
 .hero-subtitle {
@@ -754,8 +766,35 @@ ul {
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
   }
 
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 10px;
+    transition: color var(--transition);
+  }
+
+  .nav-close:hover {
+    color: var(--color-gold);
+  }
+
   .nav-menu.open {
     right: 0;
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .nav-link {
+      padding: 4px;
+    }
   }
 
   .nav-link {

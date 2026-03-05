@@ -18,6 +18,12 @@ navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
 
+const navClose = document.getElementById('navClose');
+navClose.addEventListener('click', () => {
+  navToggle.classList.remove('active');
+  navMenu.classList.remove('open');
+});
+
 // Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
