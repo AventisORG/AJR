@@ -59,7 +59,7 @@ window.addEventListener('scroll', setActiveNav);
 // ===== SCROLL FADE-IN ANIMATION =====
 function initFadeIn() {
   const elements = document.querySelectorAll(
-    '.about-text, .about-image, .service-card, .gallery-item, .info-card, .contact-form-wrap'
+    '.about-text, .about-image, .service-card, .gallery-item, .review-card, .info-card, .contact-form-wrap'
   );
 
   elements.forEach(el => el.classList.add('fade-in'));
@@ -118,6 +118,23 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.disabled = false;
   });
 });
+
+// ===== REVIEWS CAROUSEL =====
+const reviewsTrack = document.querySelector('.reviews-track');
+const btnLeft = document.querySelector('.carousel-btn-left');
+const btnRight = document.querySelector('.carousel-btn-right');
+
+if (reviewsTrack && btnLeft && btnRight) {
+  const scrollAmount = 404; // card width + gap
+
+  btnLeft.addEventListener('click', () => {
+    reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+}
 
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
