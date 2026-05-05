@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aventisjunkremoval.com/</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aventisjunkremoval.com/images/truck-trailer-sun.jpg</image:loc>
+      <image:title>Aventis Junk Removal truck and trailer</image:title>
+      <image:caption>Aventis Junk Removal truck and dump trailer in Kissimmee, FL</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aventisjunkremoval.com/images/residential-pickup.jpg</image:loc>
+      <image:title>Residential junk pickup in Kissimmee</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aventisjunkremoval.com/images/dump-action.jpg</image:loc>
+      <image:title>Dump trailer unloading at landfill</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aventisjunkremoval.com/images/truck-trailer-dump.jpg</image:loc>
+      <image:title>Aventis truck and trailer at dump site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aventisjunkremoval.com/images/services-banner.png</image:loc>
+      <image:title>Aventis Junk Removal services</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://aventisjunkremoval.com/privacy.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
