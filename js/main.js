@@ -136,6 +136,23 @@ if (reviewsTrack && btnLeft && btnRight) {
   });
 }
 
+// ===== GALLERY CAROUSEL =====
+const galleryTrack = document.querySelector('.gallery-track');
+const galleryBtnLeft = document.querySelector('.gallery-btn-left');
+const galleryBtnRight = document.querySelector('.gallery-btn-right');
+
+if (galleryTrack && galleryBtnLeft && galleryBtnRight) {
+  const galleryScrollAmount = 340; // card width + gap
+
+  galleryBtnLeft.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: -galleryScrollAmount, behavior: 'smooth' });
+  });
+
+  galleryBtnRight.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: galleryScrollAmount, behavior: 'smooth' });
+  });
+}
+
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
