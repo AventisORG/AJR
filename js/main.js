@@ -1,170 +1,140 @@
-// ===== NAVBAR SCROLL EFFECT =====
+// Navbar shadow + active link tracking on scroll, throttled via rAF so we
+// don't run DOM work on every scroll event.
 const navbar = document.getElementById('navbar');
+const sections = document.querySelectorAll('section[id]');
+const navLinkBySection = new Map(
+  [...sections].map((section) => [
+    section,
+    document.querySelector(`.nav-link[href="#${section.id}"]`),
+  ])
+);
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+let scrollPending = false;
+
+function onScroll() {
+  if (scrollPending) return;
+  scrollPending = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 50);
+
+    const probe = y + 120;
+    sections.forEach((section) => {
+      const link = navLinkBySection.get(section);
+      if (!link) return;
+      const top = section.offsetTop;
+      const inSection = probe >= top && probe < top + section.offsetHeight;
+      link.classList.toggle('active', inSection);
+    });
+
+    scrollPending = false;
+  });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// Mobile nav: open/close + focus trap via inert on the rest of the page.
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const navClose = document.getElementById('navClose');
+const inertTargets = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
+
+function setNavOpen(open) {
+  navToggle.classList.toggle('active', open);
+  navMenu.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+  inertTargets.forEach((el) => el.toggleAttribute('inert', open));
+}
+
+navToggle.addEventListener('click', () => setNavOpen(!navMenu.classList.contains('open')));
+navClose.addEventListener('click', () => setNavOpen(false));
+
+document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', () => setNavOpen(false));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+    setNavOpen(false);
+    navToggle.focus();
   }
 });
 
-// ===== MOBILE NAV TOGGLE =====
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('active');
-  navMenu.classList.toggle('open');
+window.matchMedia('(min-width: 769px)').addEventListener('change', (e) => {
+  if (e.matches) setNavOpen(false);
 });
 
-const navClose = document.getElementById('navClose');
-navClose.addEventListener('click', () => {
-  navToggle.classList.remove('active');
-  navMenu.classList.remove('open');
-});
+// Reveal-on-scroll for content blocks.
+const revealTargets = document.querySelectorAll(
+  '.about-text, .about-image, .service-card, .gallery-item, .review-card, .info-card, .contact-form-wrap'
+);
 
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    navMenu.classList.remove('open');
-  });
-});
+revealTargets.forEach((el) => el.classList.add('fade-in'));
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
-const sections = document.querySelectorAll('section[id]');
-
-function setActiveNav() {
-  const scrollY = window.scrollY + 120;
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-    const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-    if (navLink) {
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLink.classList.add('active');
-      } else {
-        navLink.classList.remove('active');
+const revealObserver = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
       }
-    }
-  });
-}
+    });
+  },
+  { threshold: 0.15 }
+);
 
-window.addEventListener('scroll', setActiveNav);
+revealTargets.forEach((el) => revealObserver.observe(el));
 
-// ===== SCROLL FADE-IN ANIMATION =====
-function initFadeIn() {
-  const elements = document.querySelectorAll(
-    '.about-text, .about-image, .service-card, .gallery-item, .review-card, .info-card, .contact-form-wrap'
-  );
-
-  elements.forEach(el => el.classList.add('fade-in'));
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  elements.forEach(el => observer.observe(el));
-}
-
-initFadeIn();
-
-// ===== CONTACT FORM =====
+// Contact form: AJAX submit to FormSubmit, swap in a success card on 2xx.
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
-
   const formData = new FormData(contactForm);
-
-  // Simple validation
-  if (!formData.get('name') || !formData.get('email') || !formData.get('phone') || !formData.get('message')) {
-    return;
-  }
-
   const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalLabel = submitBtn.textContent;
+
   submitBtn.textContent = 'Sending...';
   submitBtn.disabled = true;
 
   fetch(contactForm.action, {
     method: 'POST',
     body: formData,
-    headers: { 'Accept': 'application/json' }
+    headers: { Accept: 'application/json' },
   })
-  .then(response => {
-    if (response.ok) {
-      contactForm.style.display = 'none';
-      formSuccess.style.display = 'block';
-    } else {
+    .then((response) => {
+      if (response.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        throw new Error('Submission failed');
+      }
+    })
+    .catch(() => {
       submitBtn.textContent = 'Error — Try Again';
       submitBtn.disabled = false;
-    }
-  })
-  .catch(() => {
-    submitBtn.textContent = 'Error — Try Again';
-    submitBtn.disabled = false;
-  });
+      setTimeout(() => {
+        submitBtn.textContent = originalLabel;
+      }, 3000);
+    });
 });
 
-// ===== REVIEWS CAROUSEL =====
-const reviewsTrack = document.querySelector('.reviews-track');
-const btnLeft = document.querySelector('.carousel-btn-left');
-const btnRight = document.querySelector('.carousel-btn-right');
+// Horizontal scroll carousels: shared behavior for reviews + gallery.
+function bindCarousel(trackSelector, leftBtnSelector, rightBtnSelector) {
+  const track = document.querySelector(trackSelector);
+  const left = document.querySelector(leftBtnSelector);
+  const right = document.querySelector(rightBtnSelector);
+  if (!track || !left || !right) return;
 
-if (reviewsTrack && btnLeft && btnRight) {
-  const scrollAmount = 404; // card width + gap
+  const firstCard = track.firstElementChild;
+  const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+  const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 320;
 
-  btnLeft.addEventListener('click', () => {
-    reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-
-  btnRight.addEventListener('click', () => {
-    reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+  left.addEventListener('click', () => track.scrollBy({ left: -step, behavior: 'smooth' }));
+  right.addEventListener('click', () => track.scrollBy({ left: step, behavior: 'smooth' }));
 }
 
-// ===== GALLERY CAROUSEL =====
-const galleryTrack = document.querySelector('.gallery-track');
-const galleryBtnLeft = document.querySelector('.gallery-btn-left');
-const galleryBtnRight = document.querySelector('.gallery-btn-right');
-
-if (galleryTrack && galleryBtnLeft && galleryBtnRight) {
-  const galleryScrollAmount = 340; // card width + gap
-
-  galleryBtnLeft.addEventListener('click', () => {
-    galleryTrack.scrollBy({ left: -galleryScrollAmount, behavior: 'smooth' });
-  });
-
-  galleryBtnRight.addEventListener('click', () => {
-    galleryTrack.scrollBy({ left: galleryScrollAmount, behavior: 'smooth' });
-  });
-}
-
-// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const offset = 80;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+bindCarousel('.reviews-track', '.carousel-btn-left', '.carousel-btn-right');
+bindCarousel('.gallery-track', '.gallery-btn-left', '.gallery-btn-right');

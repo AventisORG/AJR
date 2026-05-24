@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Junk Removal Kissimmee FL | Aventis Junk Removal — Veteran-Owned Junk Hauling</title>
   <meta name="description" content="Veteran-owned junk removal in Kissimmee, FL. Same-day junk hauling, furniture and appliance removal, construction debris cleanup, and dump trailer rentals serving Kissimmee, Orlando, Celebration, Davenport, and Central Florida.">
-  <meta name="keywords" content="junk removal Kissimmee, junk removal Orlando, junk hauling Kissimmee FL, furniture removal Kissimmee, appliance removal Orlando, construction debris removal, dump trailer rental Kissimmee, veteran-owned junk removal, same-day junk removal Central Florida">
   <meta name="author" content="Aventis Junk Removal">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="geo.region" content="US-FL">
   <meta name="geo.placename" content="Kissimmee">
   <meta name="geo.position" content="28.2920;-81.4076">
-  <meta name="ICBM" content="28.2920, -81.4076">
   <meta name="theme-color" content="#0a0a0a">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://aventisjunkremoval.com/">
 
   <!-- Open Graph / Facebook -->
@@ -34,10 +33,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/truck-trailer-sun.webp?v=20260523" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=20260524">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="icon" type="image/png" href="images/logo.png">
-  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -194,7 +194,7 @@
         "name": "Do you offer same-day junk removal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we frequently accommodate same-day and next-day junk removal in the Kissimmee and Orlando area, depending on availability. Call as early as possible to schedule."
+          "text": "Yes — we frequently accommodate same-day and next-day junk removal in the Kissimmee and Orlando area, depending on availability. Call as early as possible to schedule."
         }
       },
       {
@@ -226,19 +226,30 @@
   </script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="nav-logo">
-        <img src="images/logo.png" alt="Aventis Junk Removal Logo">
+      <a href="#main" class="nav-logo">
+        <picture>
+          <source srcset="images/logo.webp?v=20260524" type="image/webp">
+          <img src="images/logo.png?v=20260524" alt="Aventis Junk Removal Logo" width="420" height="107">
+        </picture>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <button class="nav-close" id="navClose" aria-label="Close navigation">&rarr;</button>
+        <li class="nav-close-item"><button class="nav-close" id="navClose" aria-label="Close navigation">&rarr;</button></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -250,16 +261,21 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- Hero Section -->
   <header class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <img src="images/tagline.png" alt="Aventis Junk Removal — Your Junk, To The Dump!" class="hero-tagline">
+      <picture>
+        <source srcset="images/tagline.webp?v=20260523" type="image/webp">
+        <img src="images/tagline.png?v=20260524" alt="Aventis Junk Removal — Your Junk, To The Dump!" class="hero-tagline" width="640" height="156" fetchpriority="high">
+      </picture>
       <h1 class="hero-h1 visually-hidden">Junk Removal in Kissimmee, FL — Veteran-Owned Junk Hauling Serving Kissimmee, Orlando &amp; Central Florida</h1>
       <div class="hero-buttons-container">
         <p class="hero-subtitle">Veteran-Owned &bull; Fast &amp; Reliable &bull; Kissimmee, FL</p>
         <div class="hero-buttons">
-          <a href="tel:+17173715190" class="btn btn-primary" aria-label="Call Aventis Junk Removal at (717) 371-5190">Call Now</a>
+          <a href="tel:+17173715190" class="btn btn-primary" aria-label="Call Now — Aventis Junk Removal at (717) 371-5190">Call Now</a>
           <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
         </div>
       </div>
@@ -276,7 +292,7 @@
       <div class="about-grid">
         <div class="about-text">
           <div class="veteran-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             Veteran-Owned Business
           </div>
           <p>Aventis Junk Removal is a <strong>veteran-owned junk removal company in Kissimmee, FL</strong>, providing fast and reliable junk hauling services for homes, businesses, and job sites throughout Central Florida.</p>
@@ -285,7 +301,10 @@
           <a href="#contact" class="btn btn-primary">Let's Talk!</a>
         </div>
         <div class="about-image">
-          <img src="images/residential-pickup.jpg" alt="Aventis Junk Removal truck at a residential junk pickup in Kissimmee, FL" loading="lazy" width="800" height="600">
+          <picture>
+            <source srcset="images/residential-pickup.webp?v=20260523" type="image/webp">
+            <img src="images/residential-pickup.jpg?v=20260523" alt="Aventis Junk Removal truck at a residential junk pickup in Kissimmee, FL" loading="lazy" width="825" height="1100">
+          </picture>
         </div>
       </div>
     </div>
@@ -298,27 +317,24 @@
         <h2 class="section-title">Junk Removal Services in Kissimmee &amp; Central Florida</h2>
         <div class="title-accent"></div>
       </div>
-      <div class="services-banner">
-        <img src="images/services-banner.png" alt="Aventis Junk Removal services: Hauling and Deliveries, Junk Removal, Dump Trailer Rentals in Kissimmee, FL" loading="lazy">
-      </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
           <h3>Hauling &amp; Deliveries</h3>
           <p>Furniture, appliance, and equipment hauling and delivery throughout Kissimmee, Orlando, and Central Florida. We move large items quickly and safely from store, storage, or job site to wherever you need them.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
           </div>
           <h3>Residential &amp; Commercial Junk Removal</h3>
           <p>Old furniture, appliances, mattresses, electronics, yard waste, construction debris, garage cleanouts, and estate cleanouts — we remove it all. Same-day junk removal in Kissimmee and the surrounding area whenever possible.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
           <h3>Dump Trailer Rentals</h3>
           <p>Renovating, cleaning out a property, or running a job site? Rent an Aventis dump trailer and handle the project on your own schedule. Drop-off and pick-up included throughout Kissimmee, Orlando, and Central Florida.</p>
@@ -341,41 +357,65 @@
       <div class="gallery-pairs">
         <div class="gallery-pair">
           <div class="pair-half">
-            <img src="images/gallery/garage-cleanout-before.jpg" alt="Cluttered garage before a full cleanout by Aventis Junk Removal in Kissimmee, FL" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/garage-cleanout-before.webp" type="image/webp">
+              <img src="images/gallery/garage-cleanout-before.jpg" alt="Cluttered garage before a full cleanout by Aventis Junk Removal in Kissimmee, FL" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label">Before</span>
           </div>
           <div class="pair-half">
-            <img src="images/gallery/garage-cleanout-after.jpg" alt="Empty, fully cleared garage after Aventis Junk Removal cleanout service" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/garage-cleanout-after.webp" type="image/webp">
+              <img src="images/gallery/garage-cleanout-after.jpg" alt="Empty, fully cleared garage after Aventis Junk Removal cleanout service" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label pair-label-after">After</span>
           </div>
         </div>
         <div class="gallery-pair">
           <div class="pair-half">
-            <img src="images/gallery/backyard-before.jpg" alt="Overgrown backyard with old shed before Aventis junk removal and demolition" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/backyard-before.webp" type="image/webp">
+              <img src="images/gallery/backyard-before.jpg" alt="Overgrown backyard with old shed before Aventis junk removal and demolition" loading="lazy" width="1400" height="573">
+            </picture>
             <span class="pair-label">Before</span>
           </div>
           <div class="pair-half">
-            <img src="images/gallery/backyard-after.jpg" alt="Cleared backyard with new fence after Aventis junk removal and yard cleanup in Kissimmee, FL" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/backyard-after.webp" type="image/webp">
+              <img src="images/gallery/backyard-after.jpg" alt="Cleared backyard with new fence after Aventis junk removal and yard cleanup in Kissimmee, FL" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label pair-label-after">After</span>
           </div>
         </div>
         <div class="gallery-pair">
           <div class="pair-half">
-            <img src="images/gallery/demolition-debris-cleanup.png" alt="Pile of carpet and demolition debris before commercial cleanup by Aventis Junk Removal" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/demolition-debris-cleanup.webp" type="image/webp">
+              <img src="images/gallery/demolition-debris-cleanup.jpg" alt="Pile of carpet and demolition debris before commercial cleanup by Aventis Junk Removal" loading="lazy" width="1299" height="1118">
+            </picture>
             <span class="pair-label">Before</span>
           </div>
           <div class="pair-half">
-            <img src="images/gallery/carpet-cleanup-after.jpg" alt="Cleared parking lot after Aventis Junk Removal commercial debris and carpet cleanup" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/carpet-cleanup-after.webp" type="image/webp">
+              <img src="images/gallery/carpet-cleanup-after.jpg" alt="Cleared parking lot after Aventis Junk Removal commercial debris and carpet cleanup" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label pair-label-after">After</span>
           </div>
         </div>
         <div class="gallery-pair">
           <div class="pair-half">
-            <img src="images/gallery/patio-cleanout-before.jpg" alt="Cluttered patio with old furniture and appliances before Aventis Junk Removal cleanout in Kissimmee, FL" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/patio-cleanout-before.webp" type="image/webp">
+              <img src="images/gallery/patio-cleanout-before.jpg" alt="Cluttered patio with old furniture and appliances before Aventis Junk Removal cleanout in Kissimmee, FL" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label">Before</span>
           </div>
           <div class="pair-half">
-            <img src="images/gallery/patio-cleanout-after.jpg" alt="Cleared patio after Aventis Junk Removal furniture and appliance haul-away service" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/patio-cleanout-after.webp" type="image/webp">
+              <img src="images/gallery/patio-cleanout-after.jpg" alt="Cleared patio after Aventis Junk Removal furniture and appliance haul-away service" loading="lazy" width="1050" height="1400">
+            </picture>
             <span class="pair-label pair-label-after">After</span>
           </div>
         </div>
@@ -385,24 +425,36 @@
 
       <div class="gallery-carousel">
         <button class="carousel-btn gallery-btn-left" aria-label="Previous photos">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="gallery-track">
           <div class="gallery-item">
-            <img src="images/gallery/trailer-dumping-load.jpg" alt="Aventis Junk Removal dump trailer unloading a full load at the landfill near Kissimmee, FL" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/trailer-dumping-load.webp" type="image/webp">
+              <img src="images/gallery/trailer-dumping-load.jpg" alt="Aventis Junk Removal dump trailer unloading a full load at the landfill near Kissimmee, FL" loading="lazy" width="1050" height="1400">
+            </picture>
           </div>
           <div class="gallery-item">
-            <img src="images/gallery/loaded-furniture-trailer.jpg" alt="Aventis trailer loaded with mattresses and furniture from a Kissimmee, FL house cleanout" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/loaded-furniture-trailer.webp" type="image/webp">
+              <img src="images/gallery/loaded-furniture-trailer.jpg" alt="Aventis trailer loaded with mattresses and furniture from a Kissimmee, FL house cleanout" loading="lazy" width="1050" height="1400">
+            </picture>
           </div>
           <div class="gallery-item">
-            <img src="images/gallery/construction-debris-haul.jpg" alt="Aventis dump trailer unloading construction debris at a Central Florida landfill" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/construction-debris-haul.webp" type="image/webp">
+              <img src="images/gallery/construction-debris-haul.jpg" alt="Aventis dump trailer unloading construction debris at a Central Florida landfill" loading="lazy" width="1050" height="1400">
+            </picture>
           </div>
           <div class="gallery-item">
-            <img src="images/gallery/commercial-pew-removal.jpg" alt="Commercial church pew removal job by Aventis Junk Removal in Central Florida" loading="lazy">
+            <picture>
+              <source srcset="images/gallery/commercial-pew-removal.webp" type="image/webp">
+              <img src="images/gallery/commercial-pew-removal.jpg" alt="Commercial church pew removal job by Aventis Junk Removal in Central Florida" loading="lazy" width="1400" height="1050">
+            </picture>
           </div>
         </div>
         <button class="carousel-btn gallery-btn-right" aria-label="Next photos">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
     </div>
@@ -417,16 +469,16 @@
       </div>
       <div class="reviews-carousel">
         <button class="carousel-btn carousel-btn-left" aria-label="Previous reviews">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="reviews-track">
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"I am thoroughly impressed with the level of service provided. The team was punctual, courteous, and demonstrated great efficiency in removing multiple sofa beds and a recliner. Their reliability and professionalism are top-tier. I intend to use their services for all future heavy transport and hauling requirements. 5 star service. Highly recommend!"</p>
           <div class="review-author">
@@ -435,12 +487,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Amazing, everything was swift no hassle, and the communication with Aventus was superb! Definitely recommend to anyone in the area!"</p>
           <div class="review-author">
@@ -449,12 +501,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Aventis is an incredible group! Came out the same day! The last company promised to remove it but left a huge pile! Aventis even cleaned up the weeds that had grown up around it. Aventis is FANTABULOUS!!! THANK YOU!!!"</p>
           <div class="review-author">
@@ -463,12 +515,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Fantastic, on time, courteous, service men! Highly recommend!!"</p>
           <div class="review-author">
@@ -477,12 +529,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Are you looking for someone to move your items? These would be the two gentlemen to come. They were so quick to respond, very professional, on time. And their pricing was amazing. I was very grateful."</p>
           <div class="review-author">
@@ -491,12 +543,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Overall 10/10 service. Communication and punctuality at its finest. 2 Great guys willing to help with all my requests. Thank you both for the excellent work."</p>
           <div class="review-author">
@@ -505,12 +557,12 @@
           </div>
         </div>
         <div class="review-card">
-          <div class="review-stars">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
+            <svg width="18" height="18" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
           <p class="review-text">"Outstanding service. They came in and took care of all the items in a professional manner. Definitely would use them again."</p>
           <div class="review-author">
@@ -520,7 +572,7 @@
         </div>
         </div>
         <button class="carousel-btn carousel-btn-right" aria-label="Next reviews">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
     </div>
@@ -589,15 +641,15 @@
             <h3>Get In Touch</h3>
             <ul class="contact-details">
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <span>8809 Rhodes Street, Kissimmee, FL 34747-1580, US</span>
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <a href="mailto:aventisjr@yahoo.com">aventisjr@yahoo.com</a>
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <a href="tel:+17173715190">+1 (717) 371-5190</a>
               </li>
             </ul>
@@ -609,18 +661,18 @@
             <input type="hidden" name="_subject" value="New message from Aventis Junk Removal website">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="text" name="_honey" style="display:none">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required>
+              <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" required>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
@@ -629,7 +681,7 @@
             <button type="submit" class="btn btn-primary btn-block">Send Message</button>
           </form>
           <div class="form-success" id="formSuccess" style="display:none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <h3>Message Sent!</h3>
             <p>Thank you for reaching out. We'll get back to you shortly.</p>
           </div>
@@ -638,27 +690,32 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logo.png" alt="Aventis Junk Removal" class="footer-logo">
+          <picture>
+            <source srcset="images/logo.webp?v=20260524" type="image/webp">
+            <img src="images/logo.png?v=20260524" alt="Aventis Junk Removal" class="footer-logo" width="420" height="107">
+          </picture>
           <p class="footer-tagline">Your Junk, To The Dump!</p>
         </div>
         <div class="footer-contact">
           <h4>Contact Us</h4>
           <ul>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <a href="tel:+17173715190">+1 (717) 371-5190</a>
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:aventisjr@yahoo.com">aventisjr@yahoo.com</a>
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <span>8809 Rhodes Street, Kissimmee, FL 34747-1580, US</span>
             </li>
           </ul>
@@ -686,6 +743,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260217"></script>
+  <script src="js/main.js?v=20260524" defer></script>
 </body>
 </html>
