@@ -1,6 +1,16 @@
-// Navbar shadow + active link tracking on scroll, throttled via rAF so we
-// don't run DOM work on every scroll event.
+// Navbar shadow on scroll. Single passive listener, single property read,
+// no layout work — won't trigger forced reflow.
 const navbar = document.getElementById('navbar');
+
+window.addEventListener(
+  'scroll',
+  () => navbar.classList.toggle('scrolled', window.scrollY > 50),
+  { passive: true }
+);
+
+// Active nav link tracking via IntersectionObserver. The rootMargin defines
+// a thin horizontal band ~30% from the top of the viewport — the section
+// whose content sits in that band is the "current" one. No offsetTop reads.
 const sections = document.querySelectorAll('section[id]');
 const navLinkBySection = new Map(
   [...sections].map((section) => [
@@ -9,29 +19,18 @@ const navLinkBySection = new Map(
   ])
 );
 
-let scrollPending = false;
-
-function onScroll() {
-  if (scrollPending) return;
-  scrollPending = true;
-  requestAnimationFrame(() => {
-    const y = window.scrollY;
-    navbar.classList.toggle('scrolled', y > 50);
-
-    const probe = y + 120;
-    sections.forEach((section) => {
-      const link = navLinkBySection.get(section);
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const link = navLinkBySection.get(entry.target);
       if (!link) return;
-      const top = section.offsetTop;
-      const inSection = probe >= top && probe < top + section.offsetHeight;
-      link.classList.toggle('active', inSection);
+      link.classList.toggle('active', entry.isIntersecting);
     });
+  },
+  { rootMargin: '-15% 0px -50% 0px' }
+);
 
-    scrollPending = false;
-  });
-}
-
-window.addEventListener('scroll', onScroll, { passive: true });
+sections.forEach((section) => navObserver.observe(section));
 
 // Mobile nav: open/close + focus trap via inert on the rest of the page.
 const navToggle = document.getElementById('navToggle');
