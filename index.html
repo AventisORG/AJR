@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" as="image" href="images/truck-trailer-sun.webp?v=20260523" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css?v=20260524">
+  <link rel="stylesheet" href="css/style.css?v=20260615">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -255,6 +255,7 @@
         <li class="nav-close-item"><button class="nav-close" id="navClose" aria-label="Close navigation">&rarr;</button></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#estimate" class="nav-link">Estimate</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
         <li><a href="#reviews" class="nav-link">Reviews</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
@@ -279,7 +280,7 @@
         <p class="hero-subtitle">Veteran-Owned &bull; Fast &amp; Reliable &bull; Kissimmee, FL</p>
         <div class="hero-buttons">
           <a href="tel:+17173715190" class="btn btn-primary" aria-label="Call Now — Aventis Junk Removal at (717) 371-5190">Call Now</a>
-          <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+          <a href="#estimate" class="btn btn-outline">Get an Instant Estimate</a>
         </div>
       </div>
     </div>
@@ -346,6 +347,68 @@
       <div class="service-areas">
         <h3 class="service-areas-title">Areas We Serve</h3>
         <p class="service-areas-text">Aventis Junk Removal proudly serves <strong>Kissimmee, Orlando, Celebration, Davenport, St. Cloud, Winter Garden, Lake Buena Vista, Poinciana, Haines City,</strong> and the surrounding communities throughout <strong>Osceola County</strong> and <strong>Orange County, Florida</strong>. If your address is in Central Florida, give us a call — chances are we can help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estimate Calculator Section -->
+  <section class="estimator" id="estimate">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Instant Junk Removal Estimate</h2>
+        <div class="title-accent"></div>
+        <p class="estimator-intro">Pick what you need hauled and get a ballpark price in seconds. Your exact price is always confirmed free and up front, on-site, before any work begins — no surprises.</p>
+      </div>
+
+      <div class="estimator-card">
+        <div class="estimator-tabs" role="tablist" aria-label="Estimate method">
+          <button class="est-tab" id="tab-items" role="tab" aria-selected="true" aria-controls="panel-items">By item</button>
+          <button class="est-tab" id="tab-load" role="tab" aria-selected="false" aria-controls="panel-load" tabindex="-1">Full load / cleanout</button>
+        </div>
+
+        <div class="estimator-panel" id="panel-items" role="tabpanel" aria-labelledby="tab-items">
+          <div class="est-items-grid" id="estItemsGrid"></div>
+        </div>
+
+        <div class="estimator-panel" id="panel-load" role="tabpanel" aria-labelledby="tab-load" hidden>
+          <div class="est-loads-grid" id="estLoadsGrid"></div>
+        </div>
+
+        <div class="est-controls">
+          <div class="est-field">
+            <span class="est-field-label" id="estDistanceLabel">How far are you from us?</span>
+            <div class="est-distance" id="estDistanceGroup" role="group" aria-labelledby="estDistanceLabel"></div>
+          </div>
+          <label class="est-check">
+            <input type="checkbox" id="estHazard">
+            <span class="est-check-text">My load has hazardous or special items
+              <small>Paint, chemicals, tires, batteries, propane, etc.</small>
+            </span>
+          </label>
+        </div>
+        <p class="est-haz-note" id="estHazNote" role="status" hidden>Some hazardous items need special handling or a licensed disposal site. We'll confirm exactly what we can take — and any added fee — free, before we start.</p>
+
+        <div class="estimator-result">
+          <div class="est-result-summary">
+            <p class="est-result-label">Estimated total</p>
+            <p class="est-result-value" id="estResultValue" aria-live="polite">—</p>
+            <ul class="est-breakdown" id="estBreakdown" hidden>
+              <li><span>Labor &amp; hauling</span><span id="estLaborLine">—</span></li>
+              <li><span>Travel &amp; disposal</span><span id="estFeesLine">—</span></li>
+              <li class="est-breakdown-haz" id="estHazRow" hidden><span>Special handling</span><span id="estHazLine">—</span></li>
+            </ul>
+          </div>
+          <div class="est-result-actions">
+            <button type="button" class="btn btn-primary" id="estSendBtn">Send this estimate &rarr;</button>
+            <a href="tel:+17173715190" class="btn btn-outline">Or call (717) 371-5190</a>
+          </div>
+        </div>
+
+        <p class="estimator-disclaimer">Ballpark estimate only — it already includes travel and dump fees, so there are no surprise add-ons. Final pricing depends on volume, weight, and access, and is always confirmed free, on-site, before we start. You'll never be charged more than the on-site quote.</p>
+
+        <noscript>
+          <p class="estimator-disclaimer">The estimate calculator needs JavaScript. For a fast quote, call <a href="tel:+17173715190">(717) 371-5190</a> or use the <a href="#contact">contact form below</a>.</p>
+        </noscript>
       </div>
     </div>
   </section>
@@ -746,6 +809,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260524b" defer></script>
+  <script src="js/main.js?v=20260615" defer></script>
 </body>
 </html>
